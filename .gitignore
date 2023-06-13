@@ -1,0 +1,8 @@
+node_modules
+build
+target
+log.html
+tree-sitter-gherkin.wasm
+src/grammar.json
+src/node-types.json
+src/parser.c

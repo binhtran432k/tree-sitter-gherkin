@@ -1,0 +1,33 @@
+{
+  "name": "tree-sitter-gherkin",
+  "version": "1.0.0",
+  "description": "Gherkin grammar for tree-sitter",
+  "main": "bindings/node",
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "dialect": "node script/dialect.cc.js"
+  },
+  "keywords": [
+    "tree-sitter",
+    "parser",
+    "lexer",
+    "gherkin"
+  ],
+  "author": "Tran Duc Binh <binhtran432k@gmail.com>",
+  "license": "ISC",
+  "tree-sitter": [
+    {
+      "scope": "source.gherkin",
+      "file-types": [
+        "feature"
+      ]
+    }
+  ],
+  "dependencies": {
+    "nan": "^2.17.0"
+  },
+  "devDependencies": {
+    "@cucumber/gherkin": "^26.2.0",
+    "tree-sitter-cli": "^0.20.8"
+  }
+}
