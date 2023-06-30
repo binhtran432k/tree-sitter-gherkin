@@ -178,7 +178,7 @@ module.exports = grammar({
           seq($._then_start, alias($._next_token, $.then_keyword)),
           seq($._and_start, alias($._next_token, $.and_keyword)),
           seq($._but_start, alias($._next_token, $.but_keyword)),
-          alias(ASTERISK_KEYWORD, $.asterisk)
+          alias(ASTERISK_KEYWORD, $.asterisk_keyword)
         ),
         optional($.inline_text)
       ),
