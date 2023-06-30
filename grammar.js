@@ -70,19 +70,16 @@ module.exports = grammar({
       choice(getDocStringRule($, BACKTICK_X3), getDocStringRule($, DITTO_X3)),
 
     description_helper: ($) =>
-      seq($.description, optional(seq($.comment, repeat($._line_extras)))),
-    description: ($) => repeat1($._other),
+      seq(alias(repeat1($._other), $.description), repeat($._line_extras)),
 
     language_bang_line: ($) =>
       choice(
         getLanguageRule($, $._language_start, $.language_name),
         getLanguageRule($, $._unknown_language_start, $.unknown_language_name)
       ),
-    language_keyword: () => LANGUAGE_KEYWORD,
 
     tags: ($) => repeat1(wrapLineExtras($, $.tag_line, optional($.comment))),
-    tag_line: ($) => repeat1($.tag),
-    tag: () => TAG,
+    tag_line: ($) => repeat1(alias(TAG, $.tag)),
 
     feature: ($) =>
       seq(
@@ -181,13 +178,11 @@ module.exports = grammar({
           seq($._then_start, alias($._next_token, $.then_keyword)),
           seq($._and_start, alias($._next_token, $.and_keyword)),
           seq($._but_start, alias($._next_token, $.but_keyword)),
-          $.asterisk
+          alias(ASTERISK_KEYWORD, $.asterisk)
         ),
         optional($.inline_text)
       ),
     step_args: ($) => choice($.data_table, wrapLineExtras($, $.doc_string)),
-
-    asterisk: () => ASTERISK_KEYWORD,
   },
 });
 
@@ -225,7 +220,7 @@ function getLanguageRule($, startRule, aliasRule) {
   return seq(
     startRule,
     SHARP,
-    $.language_keyword,
+    alias(LANGUAGE_KEYWORD, $.language_keyword),
     COLON,
     alias($.inline_text, aliasRule)
   );
