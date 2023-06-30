@@ -14,7 +14,7 @@
     "gherkin"
   ],
   "author": "Tran Duc Binh <binhtran432k@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "tree-sitter": [
     {
       "scope": "source.gherkin",
