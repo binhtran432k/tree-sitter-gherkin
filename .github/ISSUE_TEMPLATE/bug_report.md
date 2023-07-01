@@ -13,6 +13,13 @@ The following piece of code is valid but it is parsed incorrectly:
 
 ```
 
+<!-- Please run `gherkin --no-source --no-pickles YOUR_FILE` and show us the output. -->
+The output of `gherkin --no-source --no-pickles` is the following:
+
+```json
+
+```
+
 <!-- Please run `tree-sitter parse YOUR_FILE` and show us the output. -->
 The output of `tree-sitter parse` is the following:
 
