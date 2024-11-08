@@ -1,33 +1,42 @@
 {
-  "name": "tree-sitter-gherkin",
-  "version": "1.0.0",
-  "description": "Gherkin grammar for tree-sitter",
-  "main": "bindings/node",
-  "scripts": {
-    "build": "tree-sitter generate && node-gyp build",
-    "dialect": "node script/dialect.cc.js"
-  },
-  "keywords": [
-    "tree-sitter",
-    "parser",
-    "lexer",
-    "gherkin"
-  ],
-  "author": "Tran Duc Binh <binhtran432k@gmail.com>",
-  "license": "MIT",
-  "tree-sitter": [
-    {
-      "scope": "source.gherkin",
-      "file-types": [
-        "feature"
-      ]
-    }
-  ],
-  "dependencies": {
-    "nan": "^2.17.0"
-  },
-  "devDependencies": {
-    "@cucumber/gherkin": "^26.2.0",
-    "tree-sitter-cli": "^0.20.8"
-  }
+	"name": "tree-sitter-gherkin",
+	"version": "1.0.0",
+	"description": "Gherkin grammar for tree-sitter",
+	"keywords": ["tree-sitter", "parser", "lexer", "gherkin"],
+	"main": "bindings/node",
+	"types": "bindings/node",
+	"files": [
+		"grammar.js",
+		"binding.gyp",
+		"prebuilds/**",
+		"bindings/node/*",
+		"queries/*",
+		"src/**",
+		"*.wasm"
+	],
+	"author": "Tran Duc Binh <binhtran432k@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"install": "node-gyp-build",
+		"build": "tree-sitter generate",
+		"prestart": "tree-sitter build --wasm",
+		"start": "tree-sitter playground",
+    "test": "tree-sitter test",
+		"dialect": "node script/dialect.cc.js"
+	},
+	"devDependencies": {
+		"tree-sitter-cli": "^0.24.3"
+	},
+	"peerDependencies": {
+		"tree-sitter": "^0.21.0"
+	},
+	"peerDependenciesMeta": {
+		"tree-sitter": {
+			"optional": true
+		}
+	},
+	"dependencies": {
+		"node-addon-api": "^8.2.1",
+		"node-gyp-build": "^4.8.2"
+	}
 }
