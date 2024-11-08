@@ -1,5 +1,9 @@
 root = true
 
-[*.{js,c,cc}]
+[*.{c,cc}]
 indent_style = space
+indent_size = 2
+
+[*.{json,js}]
+indent_style = tab
 indent_size = 2
