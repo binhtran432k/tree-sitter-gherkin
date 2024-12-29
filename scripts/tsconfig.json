@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "target": "ESNext"
+  },
+  "include": ["*.ts", "utils/*.ts"]
+}

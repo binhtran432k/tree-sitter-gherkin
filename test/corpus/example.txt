@@ -1,0 +1,350 @@
+===
+Example Token Multiple
+===
+Feature: Example token used multiple times
+
+  Scenario Outline: Token used twice in a single step
+    Given <what> <what>
+
+    Examples:
+      | what  |
+      | usage |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Example Tokens Everywhere
+===
+Feature: Example tokens everywhere
+
+  Scenario Outline: the <one>
+    Given the <two>:
+      """
+      <three>
+      """
+    Given the <four>:
+      | <five> |
+
+    Examples:
+      | one | two  | three | four   | five  |
+      | un  | deux | trois | quatre | cinq  |
+      | uno | dos  | tres  | quatro | cinco |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))))))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))))))
+
+===
+Padded Example
+===
+Feature: test
+
+  Scenario: test
+    Given a <color> ball with:
+      | type     | diameter |
+      | football |       69 |
+      |   pool   |      5.6 |
+
+
+    # The "red" cell below has the following whitespace characters on each side:
+    # - U+00A0 (non-breaking space)
+    # - U+0020 (space)
+    # - U+0009 (tab)
+    # This is generated with `ruby -e 'STDOUT.write "\u00A0\u0020\u0009".encode("utf-8")' | pbcopy`
+    # and pasted. 
+    Examples:
+      | color   |
+      |  	red  	|
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))
+        (comment)
+        (comment)
+        (comment)
+        (comment)
+        (comment)
+        (comment)
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Readme Example
+===
+@a
+Feature:
+  @b @c
+  Scenario Outline:
+    Given <x>
+
+    Examples:
+      | x |
+      | y |
+
+  @d @e
+  Scenario Outline:
+    Given <m>
+
+    @f
+    Examples:
+      | m |
+      | n |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (tags
+        (tag))
+      (feature_line
+        (feature_kw)))
+    (scenario_definition
+      (tags
+        (tag)
+        (tag))
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))
+    (scenario_definition
+      (tags
+        (tag)
+        (tag))
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (tags
+            (tag))
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Several Examples
+===
+Feature: Tagged Examples
+
+  Scenario Outline: minimalistic
+    Given the <what>
+
+    @foo
+    Examples:
+      | what |
+      | foo  |
+
+    @bar
+    Examples:
+      | what |
+      | bar  |
+
+  @zap
+  Scenario: ha ok
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (tags
+            (tag))
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))
+        (examples_definition
+          (tags
+            (tag))
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))
+    (scenario_definition
+      (tags
+        (tag))
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))))))

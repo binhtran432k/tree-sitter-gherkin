@@ -3,8 +3,8 @@ $(error Windows is not supported)
 endif
 
 LANGUAGE_NAME := tree-sitter-gherkin
-HOMEPAGE_URL := https://github.com/tree-sitter/tree-sitter-gherkin
-VERSION := 1.0.0
+HOMEPAGE_URL := https://github.com/binhtran432k/tree-sitter-gherkin.git
+VERSION := 0.1.0
 
 # repository
 SRC_DIR := src

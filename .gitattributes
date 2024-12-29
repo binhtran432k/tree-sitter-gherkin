@@ -11,3 +11,5 @@ Makefile linguist-generated
 CMakeLists.txt linguist-generated
 Package.swift linguist-generated
 go.mod linguist-generated
+
+test/** -text

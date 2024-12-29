@@ -1,0 +1,483 @@
+===
+Incomplete Scenario
+===
+Feature: Incomplete scenarios
+
+  Background: Adding a background won't make a pickle
+    * a step
+
+  Scenario: no steps
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (background
+      (background_line
+        (background_kw)
+        (context))
+      (step
+        (asterisk_line
+          (context))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))))))
+
+===
+Incomplete Scenario Outline
+===
+Feature: Incomplete scenario outlines
+
+  Background: Adding a background won't make a pickle
+    * a step
+
+  Scenario Outline: steps, no examples
+    Given a step
+
+  Scenario Outline: no steps, no examples
+
+  Scenario Outline: no steps, no table
+
+    Examples:
+
+  Scenario Outline: no steps, only table header
+
+    Examples:
+    | what |
+
+  Scenario Outline: no steps, one example header
+
+    Examples:
+    | nope |
+    | nada |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (background
+      (background_line
+        (background_kw)
+        (context))
+      (step
+        (asterisk_line
+          (context))))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (description_helper
+              (description))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell))))))))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Scenario Outline
+===
+Feature: Minimal Scenario Outline
+
+  Scenario: minimalistic
+    Given the <what>
+
+    Examples:
+      | what       |
+      | minimalism |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Scenario Outline No Newline
+===
+Feature: Minimal Scenario Outline
+
+Scenario Outline: minimalistic
+    Given the <what>
+
+Examples:
+  | what       |
+  | minimalism |
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Scenario Outline With Docstring
+===
+Feature: Scenario Outline with a docstring
+
+Scenario Outline: Greetings come in many forms
+    Given this file:
+    """<type>
+    Greeting:<content>
+    """
+
+Examples:
+  | type  | content |
+  | en    | Hello   |
+  | fr    | Bonjour |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (media_type)
+              (doc_string_content))))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))))))
+
+===
+Scenario Outline With Value With Dollar Sign
+===
+Feature: Scenario Outline with a value with a dollar sign ($)
+
+Scenario Outline: minimalistic
+    Given the <what>
+
+Examples:
+  | what     |
+  | pa$$word |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Scenario Outline With Value With Trailing Backslash
+===
+Feature: Scenario Outline with values with trailing backslash
+
+Scenario Outline: minimalistic
+    Given <what>
+    When <this>
+    Then <that>
+
+Examples:
+  | what | this  | that   |
+  | x\\y | this\ | that\\ |
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))))))
+
+===
+Scenario Outlines With Tags
+===
+@a
+Feature:
+  @b @c
+  Scenario Outline:
+    Given <x>
+
+    Examples:
+      | x |
+      | y |
+
+  @d @e
+  Scenario Outline:
+    Given <m>
+
+    @f
+    Examples:
+      | m |
+      | n |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (tags
+        (tag))
+      (feature_line
+        (feature_kw)))
+    (scenario_definition
+      (tags
+        (tag)
+        (tag))
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))
+    (scenario_definition
+      (tags
+        (tag)
+        (tag))
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (tags
+            (tag))
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))
+
+===
+Tagged Feature With Scenario Outline
+===
+@sometag
+Feature: Foo
+
+  Scenario Outline: Bar
+    Then Baz
+
+    Examples:
+    | name |
+    | X    |
+    | Y    |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (tags
+        (tag))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (then_line
+            (then_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))))

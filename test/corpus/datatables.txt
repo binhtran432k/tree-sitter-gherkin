@@ -1,0 +1,150 @@
+===
+Datatables
+===
+Feature: DataTables
+
+  Scenario: minimalistic
+    Given a simple data table
+      | foo | bar |
+      | boz | boo |
+    And a data table with a single cell
+      | foo |
+    And a data table with different fromatting
+      |   foo|bar|    boz    |    
+    And a data table with an empty cell
+      |foo||boz|
+    And a data table with comments and newlines inside
+      | foo | bar |
+
+      | boz  | boo  |
+      # this is a comment
+      | boz2 | boo2 |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col)
+                (table_col
+                  (table_cell))))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (comment)
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))))))
+
+===
+Datatables With New Lines
+===
+Feature: DataTables
+
+  Scenario: some whitespace is important
+    Given 3 lines of poetry on 5 lines
+      |  \nraindrops--\nher last kiss\ngoodbye.\n  |
+    Given an example of negative space
+      |        lost        i n        space        |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))))))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))))))))))

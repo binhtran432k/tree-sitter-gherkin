@@ -1,0 +1,356 @@
+===
+I18n Emoji
+===
+# language: em
+📚: 🙈🙉🙊
+
+  📕: 💃
+    😐🎸
+
+---
+
+(document
+  (feature
+    (feature_header
+      (language
+        (language_name))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))))
+
+===
+I18n Fr
+===
+#language:fr
+Fonctionnalité: i18n support
+
+  Scénario: Support des caractères spéciaux
+    Soit un exemple de scénario en français
+    Quand j'ai 1 gâteau
+    Alors je suis heureux
+
+  Scénario: Support du mot-clef "Etant donné que "
+    Etant donné que j'aime les gâteaux
+    Lorsqu'on m'offre 1 gâteau
+    Alors je suis heureux
+
+  Scénario: Support du mot-clef "Etant donné qu'"
+    Etant donné qu'offrir un gâteau rend heureux
+    Lorsqu'on m'offre 1 gâteau
+    Alors je suis heureux
+
+  Scénario: Support du mot-clef "Étant donné que "
+    Étant donné que j'aime les gâteaux 
+    Lorsqu'on m'offre 1 gâteau
+    Alors je suis heureux
+
+  Scénario: Support du mot-clef "Étant donné qu'"
+    Étant donné qu'offrir un gâteau rend heureux
+    Lorsqu'on m'offre 1 gâteau
+    Alors je suis heureux
+
+  Scénario: Support du mot-clef "Et que "
+    Soit un exemple de scénario en français
+    Lorsque j'ai 2 gâteaux
+    Et que quelqu'un m'offre 1 gâteau
+    Alors j'ai 3 gâteaux
+
+  Scénario: Support du mot-clef "Et qu'"
+    Soit un exemple de scénario en français
+    Lorsque j'ai 2 gâteaux
+    Et qu'on m'offre 1 gâteau
+    Alors j'ai 3 gâteaux
+
+  Scénario: Support du mot-clef "Et "
+    Soit un exemple de scénario en français
+    Quand j'ai 2 gâteaux
+    Et quelqu'un m'offre 1 gâteau
+    Alors j'ai 3 gâteaux
+
+  Scénario: Support du mot-clef "Mais que "
+    Soit un exemple de scénario en français
+    Lorsque j'ai 2 gâteaux
+    Mais que quelqu'un me vole 1 gâteau
+    Alors j'ai 1 gâteau
+
+  Scénario: Support du mot-clef "Mais qu'"
+    Soit un exemple de scénario en français
+    Lorsque j'ai 2 gâteaux
+    Mais qu'on me vole 1 gâteau
+    Alors j'ai 1 gâteau
+
+  Scénario: Support du mot-clef "Mais "
+    Soit un exemple de scénario en français
+    Quand j'ai 2 gâteaux
+    Mais quelqu'un me vole 1 gâteau
+    Alors j'ai 1 gâteau
+
+---
+
+(document
+  (feature
+    (feature_header
+      (language
+        (language_name))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (and_line
+            (and_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (and_line
+            (and_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (and_line
+            (and_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (but_line
+            (but_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (but_line
+            (but_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (but_line
+            (but_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))))
+
+===
+I18n No
+===
+#language:no
+Egenskap: i18n support
+
+  Scenario: Parsing many languages
+    Gitt Gherkin supports many languages
+    Når Norwegian keywords are parsed
+    Så they should be recognized
+
+---
+
+(document
+  (feature
+    (feature_header
+      (language
+        (language_name))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (step
+          (when_line
+            (when_kw)
+            (context)))
+        (step
+          (then_line
+            (then_kw)
+            (context)))))))

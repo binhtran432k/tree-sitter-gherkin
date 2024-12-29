@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-gherkin
-        VERSION "1.0.0"
+        VERSION "0.1.0"
         DESCRIPTION "Gherkin grammar for tree-sitter"
-        HOMEPAGE_URL "https://github.com/tree-sitter/tree-sitter-gherkin"
+        HOMEPAGE_URL "https://github.com/binhtran432k/tree-sitter-gherkin.git"
         LANGUAGES C)
 
 option(BUILD_SHARED_LIBS "Build using shared libraries" ON)

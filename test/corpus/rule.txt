@@ -1,0 +1,217 @@
+===
+Rule
+===
+Feature: Some rules
+
+  Background:
+    Given fb
+
+  Rule: A
+    The rule A description
+
+    Background:
+      Given ab
+
+    Example: Example A
+      Given a
+
+  Rule: B
+    The rule B description
+
+    Example: Example B
+      Given b
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (background
+      (background_line
+        (background_kw))
+      (step
+        (given_line
+          (given_kw)
+          (context))))
+    (rule
+      (rule_header
+        (rule_line
+          (rule_kw)
+          (context))
+        (description_helper
+          (description)))
+      (background
+        (background_line
+          (background_kw))
+        (step
+          (given_line
+            (given_kw)
+            (context))))
+      (scenario_definition
+        (scenario
+          (scenario_line
+            (scenario_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context))))))
+    (rule
+      (rule_header
+        (rule_line
+          (rule_kw)
+          (context))
+        (description_helper
+          (description)))
+      (scenario_definition
+        (scenario
+          (scenario_line
+            (scenario_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context))))))))
+
+===
+Rule With Tag
+===
+@tag_feature
+Feature: Some tagged rules
+
+  Rule: Untagged rule
+  The untagged rule description
+
+    Scenario: Scenario with only a feature tag
+      Given a
+
+  @tag_rule
+  Rule: Tagged rule
+  The tagged rule description
+
+    Scenario: Scenario with feature and rule tags
+      Given b
+
+    @tag_scenario
+    Scenario: Scenario with feature, rule and scenario tags
+      Given b
+
+    @tag_outline
+    Scenario Outline: Tagged Scenario outline
+      Given b
+
+      @examples_tag
+      Examples:
+        | header |
+        | a      |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (tags
+        (tag))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (rule
+      (rule_header
+        (rule_line
+          (rule_kw)
+          (context))
+        (description_helper
+          (description)))
+      (scenario_definition
+        (scenario
+          (scenario_line
+            (scenario_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context))))))
+    (rule
+      (rule_header
+        (tags
+          (tag))
+        (rule_line
+          (rule_kw)
+          (context))
+        (description_helper
+          (description)))
+      (scenario_definition
+        (scenario
+          (scenario_line
+            (scenario_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context)))))
+      (scenario_definition
+        (tags
+          (tag))
+        (scenario
+          (scenario_line
+            (scenario_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context)))))
+      (scenario_definition
+        (tags
+          (tag))
+        (scenario
+          (scenario_outline_line
+            (scenario_outline_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context)))
+          (examples_definition
+            (tags
+              (tag))
+            (examples
+              (examples_line
+                (examples_kw))
+              (examples_table
+                (table_head_row
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell)))))))))))
+
+===
+Rule Without Name And Description
+===
+Feature:
+
+  Rule:
+  Scenario:
+    Given text
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)))
+    (rule
+      (rule_header
+        (rule_line
+          (rule_kw)))
+      (scenario_definition
+        (scenario
+          (scenario_line
+            (scenario_kw))
+          (step
+            (given_line
+              (given_kw)
+              (context))))))))

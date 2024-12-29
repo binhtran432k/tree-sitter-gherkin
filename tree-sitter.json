@@ -5,23 +5,22 @@
       "camelcase": "Gherkin",
       "scope": "source.gherkin",
       "path": ".",
-      "file-types": [
-        "feature"
-      ]
+      "file-types": null,
+      "injection-regex": "^gherkin$"
     }
   ],
   "metadata": {
-    "version": "1.0.0",
+    "version": "0.1.0",
     "license": "MIT",
     "description": "Gherkin grammar for tree-sitter",
     "authors": [
       {
-        "name": "Tran Duc Binh",
+        "name": "Binh Tran",
         "email": "binhtran432k@gmail.com"
       }
     ],
     "links": {
-      "repository": "https://github.com/tree-sitter/tree-sitter-gherkin"
+      "repository": "https://github.com/binhtran432k/tree-sitter-gherkin.git"
     }
   },
   "bindings": {
