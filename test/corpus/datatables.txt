@@ -148,3 +148,116 @@ Feature: DataTables
               (table_row
                 (table_col
                   (table_cell))))))))))
+
+===
+Escaped Pipes
+===
+Feature: Escaped pipes
+    The \-character will be considered as an escape in table cell
+    iff it is followed by a |-character, a \-character or an n.
+
+  Scenario: They are the future
+    Given they have arrived
+      | æ | o |
+      | a | ø |
+    Given they have arrived
+      | \|æ\\n     | \o\no\  |
+      | \\\|a\\\\n | ø\\\nø\\|
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context))
+      (description_helper
+        (description)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))))))
+
+===
+Extra Table Content
+===
+Feature: Extra table content
+  Tables are delimited by pipes on both sides.
+  Anything that isn't enclosed is not part of
+  the table.
+
+  It is not recommended to use this feature, but
+  it is how the implementation currently works.
+
+  Scenario: We're a bit extra
+    Given a pirate crew
+      | Luffy | Zorro | Doflamingo \
+      | Nami  | Brook | BlackBeard
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context))
+      (description_helper
+        (description)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))
+                (table_trailing)))))))))

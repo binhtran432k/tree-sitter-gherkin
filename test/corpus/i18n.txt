@@ -354,3 +354,50 @@ Egenskap: i18n support
           (then_line
             (then_kw)
             (context)))))))
+
+===
+Language
+===
+#language:en
+
+Feature: Explicit language specification
+
+  Scenario: minimalistic
+    Given the minimalism
+
+---
+
+(document
+  (feature
+    (feature_header
+      (language
+        (language_name))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))))
+
+===
+Spaces In Language
+===
+  #  language  :   en-lol
+OH HAI: STUFFING
+
+---
+
+(document
+  (feature
+    (feature_header
+      (language
+        (language_name))
+      (feature_line
+        (feature_kw)
+        (context)))))

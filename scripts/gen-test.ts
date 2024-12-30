@@ -48,17 +48,24 @@ function buildTests(): Record<string, BunFile[]> {
     "scenario",
     "rule",
     "feature",
-    "language",
     "i18n",
   ]);
   const tests: Record<string, BunFile[]> = {};
   for (const feature of goodFeatures) {
     const [featureName] = feature.split(".");
     let name = featureName;
-    for (const groupName of groupNameSet) {
-      if (featureName.includes(groupName)) {
-        name = groupName;
-        break;
+    if (featureName.includes("pipe") || featureName.includes("table")) {
+      name = "datatables";
+    } else if (featureName.includes("language")) {
+      name = "i18n";
+    } else if (featureName === "empty") {
+      name = "minimal";
+    } else {
+      for (const groupName of groupNameSet) {
+        if (featureName.includes(groupName)) {
+          name = groupName;
+          break;
+        }
       }
     }
     if (tests[name] === undefined) tests[name] = [];
