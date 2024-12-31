@@ -401,3 +401,33 @@ OH HAI: STUFFING
       (feature_line
         (feature_kw)
         (context)))))
+
+===
+Invalid Language
+===
+#language:no-such
+
+Feature: Minimal
+
+  Scenario: minimalistic
+    Given the minimalism
+
+---
+
+(document
+  (feature
+    (feature_header
+      (language
+        (invalid_language_name))
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))))

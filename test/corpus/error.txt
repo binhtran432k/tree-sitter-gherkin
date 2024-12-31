@@ -1,0 +1,129 @@
+===
+Multiple Parser Errors
+===
+
+invalid line here
+
+Feature: Multiple parser errors
+
+  Scenario: minimalistic
+    Given the minimalism
+
+another invalid line here
+
+---
+
+(document
+  (ERROR)
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (ERROR
+          (given_line
+            (given_kw)
+            (context)))
+        (description_helper
+          (description))))))
+
+===
+Not Gherkin
+===
+not gherkin
+
+
+---
+
+(document
+  (ERROR))
+
+===
+Single Parser Error
+===
+
+invalid line here
+
+Feature: Single parser error
+
+  Scenario: minimalistic
+    Given the minimalism
+
+---
+
+(document
+  (ERROR)
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))))
+
+===
+Unexpected Eof
+===
+Feature: Unexpected end of file
+
+  Scenario Outline: minimalistic
+    Given the minimalism
+
+    @tag
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))))))
+  (ERROR
+    (tag)))
+
+===
+Whitespace In Tags
+===
+Feature: Whitespace in tags
+
+  @a tag containing whitespace
+  Scenario: minimalistic
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (tags
+        (tag))
+      (ERROR)
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))))))

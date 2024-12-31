@@ -6,14 +6,14 @@ const gherkinUrl = new URL(
   Bun.pathToFileURL(__dirname),
 );
 const goodUrl = new URL("testdata/good/", gherkinUrl);
-// const badUrl = new URL("testdata/bad/", gherkinUrl);
+const badUrl = new URL("testdata/bad/", gherkinUrl);
 const testUrl = new URL("test/corpus/", Bun.pathToFileURL(__dirname));
 
 const goods = await readdir(goodUrl);
-// const bads = await readdir(badUrl);
+const bads = await readdir(badUrl);
 
 const goodFeatures = goods.filter((x) => x.endsWith(".feature"));
-// const badFeatures = bads.filter((x) => x.endsWith(".feature"));
+const badFeatures = bads.filter((x) => x.endsWith(".feature"));
 
 async function generateTest(name: string, files: BunFile[]): Promise<void> {
   const tests = await Promise.all(
@@ -70,6 +70,17 @@ function buildTests(): Record<string, BunFile[]> {
     }
     if (tests[name] === undefined) tests[name] = [];
     tests[name].push(Bun.file(new URL(feature, goodUrl)));
+  }
+  for (const feature of badFeatures) {
+    const [featureName] = feature.split(".");
+    let name = "error";
+    if (featureName.includes("language")) {
+      name = "i18n";
+    } else if (featureName.includes("cell")) {
+      name = "datatables";
+    }
+    if (tests[name] === undefined) tests[name] = [];
+    tests[name].push(Bun.file(new URL(feature, badUrl)));
   }
   return tests;
 }

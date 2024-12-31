@@ -261,3 +261,71 @@ Feature: Extra table content
                 (table_col
                   (table_cell))
                 (table_trailing)))))))))
+
+===
+Inconsistent Cell Count
+===
+Feature: Inconsistent cell counts
+
+  Scenario: minimalistic
+    Given a data table with inconsistent cell count
+      | foo | bar |
+      | boz | 
+
+
+  Scenario Outline: minimalistic
+    Given the <what>
+
+  Examples: 
+    | what       |
+    | minimalism | extra |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (data_table
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))))))))
+    (scenario_definition
+      (scenario
+        (scenario_outline_line
+          (scenario_outline_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))
+        (examples_definition
+          (examples
+            (examples_line
+              (examples_kw))
+            (examples_table
+              (table_head_row
+                (table_col
+                  (table_cell)))
+              (table_row
+                (table_col
+                  (table_cell))
+                (table_col
+                  (table_cell))))))))))
