@@ -1,5 +1,4 @@
 #include "gherkin/dialect.c"
-#include "gherkin/dialect.h"
 #include "tree_sitter/alloc.h"
 #include "tree_sitter/parser.h"
 
@@ -154,6 +153,7 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
       if (state.value != NULL) {
         last_value = state.value;
         last_count = 0;
+        lexer->mark_end(lexer);
       }
     }
 
