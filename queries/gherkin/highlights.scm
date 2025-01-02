@@ -1,17 +1,60 @@
 [
-  (and_kw)
   (background_kw)
-  (but_kw)
   (examples_kw)
   (feature_kw)
-  (given_kw)
   (rule_kw)
   (scenario_kw)
   (scenario_outline_kw)
-  (then_kw)
-  (when_kw)
-  "* "
 ] @keyword
+
+(given_group
+  [
+    (given_step
+      (given_line
+        (given_kw) @keyword.import))
+    (asterisk_step
+      (asterisk_line
+        "* " @keyword.import))
+    (and_step
+      (and_line
+        (and_kw) @keyword.import))
+    (but_step
+      (but_line
+        (but_kw) @keyword.import))
+  ])
+
+(when_group
+  [
+    (when_step
+      (when_line
+        (when_kw) @function))
+    (asterisk_step
+      (asterisk_line
+        "* " @function))
+    (and_step
+      (and_line
+        (and_kw) @function))
+    (but_step
+      (but_line
+        (but_kw) @function))
+  ])
+
+(then_group
+  [
+    (then_step
+      (then_line
+        (then_kw) @type))
+    (asterisk_step
+      (asterisk_line
+        "* " @type))
+    (and_step
+      (and_line
+        (and_kw) @type))
+    (but_step
+      (but_line
+        (but_kw) @type))
+  ])
+
 
 (tag) @type
 
@@ -24,6 +67,7 @@
 "|" @punctuation.special
 
 (doc_string) @string.documentation
+(media_type) @type
 
 "language" @property
 

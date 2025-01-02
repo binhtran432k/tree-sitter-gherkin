@@ -24,13 +24,23 @@ interface GherkinGrammarStruct {
   rule_header: Rule;
   rule_line: Rule;
   // Step
-  step: Rule;
+  steps: Rule;
+  _alt_steps: Rule;
   step_arg: Rule;
-  and_line: Rule;
-  but_line: Rule;
+  given_group: Rule;
+  given_step: Rule;
   given_line: Rule;
-  then_line: Rule;
+  when_group: Rule;
+  when_step: Rule;
   when_line: Rule;
+  then_group: Rule;
+  then_step: Rule;
+  then_line: Rule;
+  and_step: Rule;
+  and_line: Rule;
+  but_step: Rule;
+  but_line: Rule;
+  asterisk_step: Rule;
   asterisk_line: Rule;
   // Description
   description_helper: Rule;

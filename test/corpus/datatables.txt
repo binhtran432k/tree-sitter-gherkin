@@ -33,78 +33,79 @@ Feature: DataTables
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))))))
-        (step
-          (and_line
-            (and_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))))))
-        (step
-          (and_line
-            (and_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))))))
-        (step
-          (and_line
-            (and_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col)
-                (table_col
-                  (table_cell))))))
-        (step
-          (and_line
-            (and_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (comment)
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))))))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))))))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))))))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))))))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col)
+                  (table_col
+                    (table_cell))))))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (comment)
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))))))))))
 
 ===
 Datatables With New Lines
@@ -130,24 +131,26 @@ Feature: DataTables
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))))))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))))))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell)))))))))))
 
 ===
 Escaped Pipes
@@ -179,38 +182,40 @@ Feature: Escaped pipes
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))))))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))))))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))))))))))
 
 ===
 Extra Table Content
@@ -243,24 +248,25 @@ Feature: Extra table content
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))
-                (table_trailing)))))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell))
+                  (table_trailing))))))))))
 
 ===
 Inconsistent Cell Count
@@ -293,29 +299,31 @@ Feature: Inconsistent cell counts
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell)))))))))
     (scenario_definition
       (scenario
         (scenario_outline_line
           (scenario_outline_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (examples
             (examples_line

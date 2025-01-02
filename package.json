@@ -50,6 +50,7 @@
     "start": "tree-sitter playground",
     "gen-dialect": "bun scripts/gen-dialect.ts",
     "gen-test": "bun scripts/gen-test.ts",
+    "nvim": "mkdir -p parser && tree-sitter build -o parser/gherkin.so",
     "ts:test": "tree-sitter test",
     "ts:gen": "tree-sitter generate"
   },

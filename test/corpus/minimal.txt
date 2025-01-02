@@ -27,10 +27,11 @@ Feature: Minimal
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))
 
 ===
 Minimal
@@ -53,7 +54,8 @@ Feature: Minimal
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))

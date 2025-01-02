@@ -31,10 +31,11 @@ Feature: Some rules
     (background
       (background_line
         (background_kw))
-      (step
-        (given_line
-          (given_kw)
-          (context))))
+      (given_group
+        (given_step
+          (given_line
+            (given_kw)
+            (context)))))
     (rule
       (rule_header
         (rule_line
@@ -45,19 +46,21 @@ Feature: Some rules
       (background
         (background_line
           (background_kw))
-        (step
-          (given_line
-            (given_kw)
-            (context))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context)))))
       (scenario_definition
         (scenario
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context))))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context)))))))
     (rule
       (rule_header
         (rule_line
@@ -70,10 +73,11 @@ Feature: Some rules
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context))))))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context)))))))))
 
 ===
 Rule With Tag
@@ -129,10 +133,11 @@ Feature: Some tagged rules
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context))))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context)))))))
     (rule
       (rule_header
         (tags
@@ -147,10 +152,11 @@ Feature: Some tagged rules
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context)))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context))))))
       (scenario_definition
         (tags
           (tag))
@@ -158,10 +164,11 @@ Feature: Some tagged rules
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context)))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context))))))
       (scenario_definition
         (tags
           (tag))
@@ -169,10 +176,11 @@ Feature: Some tagged rules
           (scenario_outline_line
             (scenario_outline_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context)))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context))))
           (examples_definition
             (tags
               (tag))
@@ -211,7 +219,8 @@ Feature:
         (scenario
           (scenario_line
             (scenario_kw))
-          (step
-            (given_line
-              (given_kw)
-              (context))))))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context)))))))))

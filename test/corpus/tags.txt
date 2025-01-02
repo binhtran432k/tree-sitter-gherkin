@@ -63,10 +63,11 @@ Scenario: joined tags
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (tags
         (tag)
@@ -76,10 +77,11 @@ Scenario: joined tags
         (scenario_outline_line
           (scenario_outline_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (tags
             (tag)
@@ -118,10 +120,11 @@ Scenario: joined tags
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (tags
         (tag))
@@ -130,10 +133,11 @@ Scenario: joined tags
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (rule
       (rule_header
         (tags
@@ -148,7 +152,8 @@ Scenario: joined tags
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context))))))))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context)))))))))

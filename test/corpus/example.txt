@@ -23,10 +23,11 @@ Feature: Example token used multiple times
         (scenario_outline_line
           (scenario_outline_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (examples
             (examples_line
@@ -70,22 +71,24 @@ Feature: Example tokens everywhere
         (scenario_outline_line
           (scenario_outline_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (doc_string
-              (doc_string_content))))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (doc_string
+                (doc_string_content)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell)))))))
         (examples_definition
           (examples
             (examples_line
@@ -160,27 +163,28 @@ Feature: test
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))
-          (step_arg
-            (data_table
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell)))
-              (table_row
-                (table_col
-                  (table_cell))
-                (table_col
-                  (table_cell))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))
+            (step_arg
+              (data_table
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell))
+                  (table_col
+                    (table_cell)))))))
         (comment)
         (comment)
         (comment)
@@ -237,10 +241,11 @@ Feature:
       (scenario
         (scenario_outline_line
           (scenario_outline_kw))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (examples
             (examples_line
@@ -259,10 +264,11 @@ Feature:
       (scenario
         (scenario_outline_line
           (scenario_outline_kw))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (tags
             (tag))
@@ -311,10 +317,11 @@ Feature: Tagged Examples
         (scenario_outline_line
           (scenario_outline_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (tags
             (tag))
