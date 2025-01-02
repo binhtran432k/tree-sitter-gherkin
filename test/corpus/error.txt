@@ -68,10 +68,11 @@ Feature: Single parser error
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))
 
 ===
 Unexpected Eof
@@ -96,10 +97,11 @@ Feature: Unexpected end of file
         (scenario_outline_line
           (scenario_outline_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context)))))))
   (ERROR
     (tag)))
 

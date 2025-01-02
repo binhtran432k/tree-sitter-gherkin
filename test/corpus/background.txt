@@ -24,16 +24,8 @@ Feature: Background
       (background_line
         (background_kw)
         (context))
-      (step
-        (given_line
-          (given_kw)
-          (context))))
-    (scenario_definition
-      (scenario
-        (scenario_line
-          (scenario_kw)
-          (context))
-        (step
+      (given_group
+        (given_step
           (given_line
             (given_kw)
             (context)))))
@@ -42,10 +34,21 @@ Feature: Background
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))
 
 ===
 Complex Background
@@ -89,16 +92,8 @@ Feature: Complex background
       (background_line
         (background_kw)
         (context))
-      (step
-        (given_line
-          (given_kw)
-          (context))))
-    (scenario_definition
-      (scenario
-        (scenario_line
-          (scenario_kw)
-          (context))
-        (step
+      (given_group
+        (given_step
           (given_line
             (given_kw)
             (context)))))
@@ -107,10 +102,21 @@ Feature: Complex background
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (rule
       (rule_header
         (rule_line
@@ -119,19 +125,21 @@ Feature: Complex background
       (background
         (background_line
           (background_kw))
-        (step
-          (given_line
-            (given_kw)
-            (context))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context)))))
       (scenario_definition
         (scenario
           (scenario_line
             (scenario_kw)
             (context))
-          (step
-            (given_line
-              (given_kw)
-              (context)))
+          (given_group
+            (given_step
+              (given_line
+                (given_kw)
+                (context))))
           (examples_definition
             (examples
               (examples_line
@@ -174,7 +182,7 @@ Feature: Incomplete backgrounds, Part 1
         (scenario_line
           (scenario_kw)
           (context))
-        (step
+        (asterisk_step
           (asterisk_line
             (context)))))))
 
@@ -208,6 +216,6 @@ Feature: Incomplete backgrounds, Part 2
         (scenario_line
           (scenario_kw)
           (context))
-        (step
+        (asterisk_step
           (asterisk_line
             (context)))))))

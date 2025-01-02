@@ -181,8 +181,20 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "step"
+            "name": "_alt_steps"
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "steps"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -268,8 +280,20 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "step"
+            "name": "_alt_steps"
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "steps"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "REPEAT",
@@ -524,51 +548,25 @@
         }
       ]
     },
-    "step": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "and_line"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "but_line"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "given_line"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "then_line"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "when_line"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "asterisk_line"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "step_arg"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        }
-      ]
+    "steps": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "given_group"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "when_group"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "then_group"
+          }
+        ]
+      }
     },
     "step_arg": {
       "type": "CHOICE",
@@ -583,53 +581,57 @@
         }
       ]
     },
-    "and_line": {
-      "type": "SEQ",
+    "_alt_steps": {
+      "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "and_kw"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "context"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "name": "and_step"
         },
         {
           "type": "SYMBOL",
-          "name": "_eol"
+          "name": "but_step"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "asterisk_step"
         }
       ]
     },
-    "but_line": {
+    "given_group": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "but_kw"
+          "name": "given_step"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_alt_steps"
+          }
+        }
+      ]
+    },
+    "given_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "given_line"
         },
         {
           "type": "CHOICE",
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_arg"
             },
             {
               "type": "BLANK"
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_eol"
         }
       ]
     },
@@ -658,28 +660,40 @@
         }
       ]
     },
-    "then_line": {
+    "when_group": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "then_kw"
+          "name": "when_step"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_alt_steps"
+          }
+        }
+      ]
+    },
+    "when_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "when_line"
         },
         {
           "type": "CHOICE",
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_arg"
             },
             {
               "type": "BLANK"
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_eol"
         }
       ]
     },
@@ -705,6 +719,181 @@
         {
           "type": "SYMBOL",
           "name": "_eol"
+        }
+      ]
+    },
+    "then_group": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "then_step"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_alt_steps"
+          }
+        }
+      ]
+    },
+    "then_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "then_line"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arg"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "then_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "then_kw"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "context"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
+    },
+    "and_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "and_line"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arg"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "and_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "and_kw"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "context"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
+    },
+    "but_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "but_line"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arg"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "but_line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "but_kw"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "context"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_eol"
+        }
+      ]
+    },
+    "asterisk_step": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "asterisk_line"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "step_arg"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -1082,6 +1271,9 @@
       "name": "error_sentinel"
     }
   ],
-  "inline": [],
+  "inline": [
+    "steps",
+    "_alt_steps"
+  ],
   "supertypes": []
 }

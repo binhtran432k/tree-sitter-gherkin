@@ -22,10 +22,11 @@ I18n Emoji
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))
 
 ===
 I18n Fr
@@ -109,212 +110,245 @@ Fonctionnalité: i18n support
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (and_line
-            (and_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context)))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (and_line
-            (and_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context)))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (and_line
-            (and_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context)))
+          (and_step
+            (and_line
+              (and_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (but_line
-            (but_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context)))
+          (but_step
+            (but_line
+              (but_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (but_line
-            (but_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context)))
+          (but_step
+            (but_line
+              (but_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (but_line
-            (but_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context)))
+          (but_step
+            (but_line
+              (but_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))))
 
 ===
 I18n No
@@ -342,18 +376,21 @@ Egenskap: i18n support
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
-        (step
-          (when_line
-            (when_kw)
-            (context)))
-        (step
-          (then_line
-            (then_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
+        (when_group
+          (when_step
+            (when_line
+              (when_kw)
+              (context))))
+        (then_group
+          (then_step
+            (then_line
+              (then_kw)
+              (context))))))))
 
 ===
 Language
@@ -380,10 +417,11 @@ Feature: Explicit language specification
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))
 
 ===
 Spaces In Language
@@ -427,7 +465,8 @@ Feature: Minimal
         (scenario_line
           (scenario_kw)
           (context))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))))

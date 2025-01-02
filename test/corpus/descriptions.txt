@@ -71,10 +71,11 @@ This is an examples description
           (context))
         (description_helper
           (description))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -82,10 +83,11 @@ This is an examples description
           (context))
         (description_helper
           (description))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -93,10 +95,11 @@ This is an examples description
           (context))
         (description_helper
           (description))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -104,10 +107,11 @@ This is an examples description
           (context))
         (description_helper
           (description))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -116,10 +120,11 @@ This is an examples description
         (description_helper
           (description)
           (comment))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -128,10 +133,11 @@ This is an examples description
         (description_helper
           (description)
           (comment))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -139,10 +145,11 @@ This is an examples description
           (context))
         (description_helper
           (description))
-        (step
-          (given_line
-            (given_kw)
-            (context)))))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))))
     (scenario_definition
       (scenario
         (scenario_outline_line
@@ -150,10 +157,11 @@ This is an examples description
           (context))
         (description_helper
           (description))
-        (step
-          (given_line
-            (given_kw)
-            (context)))
+        (given_group
+          (given_step
+            (given_line
+              (given_kw)
+              (context))))
         (examples_definition
           (examples
             (examples_line

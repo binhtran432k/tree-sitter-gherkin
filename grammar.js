@@ -17,6 +17,8 @@ export default grammar({
 
   conflicts: ($) => [[$.rule], [$.scenario]],
 
+  inline: ($) => [$.steps, $._alt_steps],
+
   externals: ($) => [
     $.and_kw,
     $.background_kw,
@@ -62,7 +64,12 @@ export default grammar({
       ),
     // Background
     background: ($) =>
-      seq($.background_line, optional($.description_helper), repeat($.step)),
+      seq(
+        $.background_line,
+        optional($.description_helper),
+        repeat($._alt_steps),
+        optional($.steps),
+      ),
     background_line: ($) =>
       seq($.background_kw, ":", optional($.context), $._eol),
     // Scenario
@@ -71,7 +78,8 @@ export default grammar({
       seq(
         choice($.scenario_line, $.scenario_outline_line),
         optional($.description_helper),
-        repeat($.step),
+        repeat($._alt_steps),
+        optional($.steps),
         repeat($.examples_definition),
       ),
     scenario_line: ($) => seq($.scenario_kw, ":", optional($.context), $._eol),
@@ -91,24 +99,23 @@ export default grammar({
       seq(optional($.tags), $.rule_line, optional($.description_helper)),
     rule_line: ($) => seq($.rule_kw, ":", optional($.context), $._eol),
     // Step
-    step: ($) =>
-      seq(
-        choice(
-          $.and_line,
-          $.but_line,
-          $.given_line,
-          $.then_line,
-          $.when_line,
-          $.asterisk_line,
-        ),
-        optional($.step_arg),
-      ),
+    steps: ($) => repeat1(choice($.given_group, $.when_group, $.then_group)),
     step_arg: ($) => choice($.data_table, $.doc_string),
-    and_line: ($) => seq($.and_kw, optional($.context), $._eol),
-    but_line: ($) => seq($.but_kw, optional($.context), $._eol),
+    _alt_steps: ($) => choice($.and_step, $.but_step, $.asterisk_step),
+    given_group: ($) => seq($.given_step, repeat($._alt_steps)),
+    given_step: ($) => seq($.given_line, optional($.step_arg)),
     given_line: ($) => seq($.given_kw, optional($.context), $._eol),
-    then_line: ($) => seq($.then_kw, optional($.context), $._eol),
+    when_group: ($) => seq($.when_step, repeat($._alt_steps)),
+    when_step: ($) => seq($.when_line, optional($.step_arg)),
     when_line: ($) => seq($.when_kw, optional($.context), $._eol),
+    then_group: ($) => seq($.then_step, repeat($._alt_steps)),
+    then_step: ($) => seq($.then_line, optional($.step_arg)),
+    then_line: ($) => seq($.then_kw, optional($.context), $._eol),
+    and_step: ($) => seq($.and_line, optional($.step_arg)),
+    and_line: ($) => seq($.and_kw, optional($.context), $._eol),
+    but_step: ($) => seq($.but_line, optional($.step_arg)),
+    but_line: ($) => seq($.but_kw, optional($.context), $._eol),
+    asterisk_step: ($) => seq($.asterisk_line, optional($.step_arg)),
     asterisk_line: ($) => seq("* ", optional($.context), $._eol),
     // Description
     description_helper: ($) => seq($.description, repeat($.comment)),

@@ -19,6 +19,25 @@
     }
   },
   {
+    "type": "and_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "and_line",
+          "named": true
+        },
+        {
+          "type": "step_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "asterisk_line",
     "named": true,
     "fields": {},
@@ -34,6 +53,25 @@
     }
   },
   {
+    "type": "asterisk_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "asterisk_line",
+          "named": true
+        },
+        {
+          "type": "step_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "background",
     "named": true,
     "fields": {},
@@ -42,7 +80,19 @@
       "required": true,
       "types": [
         {
+          "type": "and_step",
+          "named": true
+        },
+        {
+          "type": "asterisk_step",
+          "named": true
+        },
+        {
           "type": "background_line",
+          "named": true
+        },
+        {
+          "type": "but_step",
           "named": true
         },
         {
@@ -50,7 +100,15 @@
           "named": true
         },
         {
-          "type": "step",
+          "type": "given_group",
+          "named": true
+        },
+        {
+          "type": "then_group",
+          "named": true
+        },
+        {
+          "type": "when_group",
           "named": true
         }
       ]
@@ -89,6 +147,25 @@
         },
         {
           "type": "context",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "but_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "but_line",
+          "named": true
+        },
+        {
+          "type": "step_arg",
           "named": true
         }
       ]
@@ -332,6 +409,33 @@
     }
   },
   {
+    "type": "given_group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "and_step",
+          "named": true
+        },
+        {
+          "type": "asterisk_step",
+          "named": true
+        },
+        {
+          "type": "but_step",
+          "named": true
+        },
+        {
+          "type": "given_step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "given_line",
     "named": true,
     "fields": {},
@@ -345,6 +449,25 @@
         },
         {
           "type": "given_kw",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "given_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "given_line",
+          "named": true
+        },
+        {
+          "type": "step_arg",
           "named": true
         }
       ]
@@ -448,11 +571,27 @@
       "required": true,
       "types": [
         {
+          "type": "and_step",
+          "named": true
+        },
+        {
+          "type": "asterisk_step",
+          "named": true
+        },
+        {
+          "type": "but_step",
+          "named": true
+        },
+        {
           "type": "description_helper",
           "named": true
         },
         {
           "type": "examples_definition",
+          "named": true
+        },
+        {
+          "type": "given_group",
           "named": true
         },
         {
@@ -464,7 +603,11 @@
           "named": true
         },
         {
-          "type": "step",
+          "type": "then_group",
+          "named": true
+        },
+        {
+          "type": "when_group",
           "named": true
         }
       ]
@@ -522,45 +665,6 @@
         },
         {
           "type": "scenario_outline_kw",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "step",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "and_line",
-          "named": true
-        },
-        {
-          "type": "asterisk_line",
-          "named": true
-        },
-        {
-          "type": "but_line",
-          "named": true
-        },
-        {
-          "type": "given_line",
-          "named": true
-        },
-        {
-          "type": "step_arg",
-          "named": true
-        },
-        {
-          "type": "then_line",
-          "named": true
-        },
-        {
-          "type": "when_line",
           "named": true
         }
       ]
@@ -664,6 +768,33 @@
     }
   },
   {
+    "type": "then_group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "and_step",
+          "named": true
+        },
+        {
+          "type": "asterisk_step",
+          "named": true
+        },
+        {
+          "type": "but_step",
+          "named": true
+        },
+        {
+          "type": "then_step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "then_line",
     "named": true,
     "fields": {},
@@ -683,6 +814,52 @@
     }
   },
   {
+    "type": "then_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "step_arg",
+          "named": true
+        },
+        {
+          "type": "then_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "when_group",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "and_step",
+          "named": true
+        },
+        {
+          "type": "asterisk_step",
+          "named": true
+        },
+        {
+          "type": "but_step",
+          "named": true
+        },
+        {
+          "type": "when_step",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "when_line",
     "named": true,
     "fields": {},
@@ -696,6 +873,25 @@
         },
         {
           "type": "when_kw",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "when_step",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "step_arg",
+          "named": true
+        },
+        {
+          "type": "when_line",
           "named": true
         }
       ]
