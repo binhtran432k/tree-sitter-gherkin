@@ -67,7 +67,7 @@ Feature: DocString variations
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content)))))
@@ -75,7 +75,7 @@ Feature: DocString variations
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (media_type)
@@ -83,42 +83,42 @@ Feature: DocString variations
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content))))
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content))))
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content))))
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content))))
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content))))
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (doc_string_content)))))))))

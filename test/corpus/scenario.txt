@@ -22,7 +22,7 @@ Feature: Incomplete scenarios
         (context))
       (asterisk_step
         (asterisk_line
-          (context))))
+          (step_context))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -71,7 +71,7 @@ Feature: Incomplete scenario outlines
         (context))
       (asterisk_step
         (asterisk_line
-          (context))))
+          (step_context))))
     (scenario_definition
       (scenario
         (scenario_outline_line
@@ -81,7 +81,7 @@ Feature: Incomplete scenario outlines
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_outline_line
@@ -148,7 +148,8 @@ Feature: Minimal Scenario Outline
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -189,7 +190,8 @@ Examples:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -235,7 +237,7 @@ Examples:
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (doc_string
                 (media_type)
@@ -290,7 +292,8 @@ Examples:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -333,17 +336,20 @@ Examples:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -406,7 +412,8 @@ Feature:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -429,7 +436,8 @@ Feature:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (tags
             (tag))
@@ -477,7 +485,7 @@ Feature: Foo
           (then_step
             (then_line
               (then_kw)
-              (context))))
+              (step_context))))
         (examples_definition
           (examples
             (examples_line

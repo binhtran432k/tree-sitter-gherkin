@@ -28,7 +28,7 @@ another invalid line here
         (ERROR
           (given_line
             (given_kw)
-            (context)))
+            (step_context)))
         (description_helper
           (description))))))
 
@@ -72,7 +72,7 @@ Feature: Single parser error
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 Unexpected Eof
@@ -101,7 +101,7 @@ Feature: Unexpected end of file
           (given_step
             (given_line
               (given_kw)
-              (context)))))))
+              (step_context)))))))
   (ERROR
     (tag)))
 

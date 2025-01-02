@@ -27,7 +27,9 @@ Feature: Example token used multiple times
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -75,7 +77,8 @@ Feature: Example tokens everywhere
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context
+                (step_param)))
             (step_arg
               (doc_string
                 (doc_string_content)))))
@@ -83,7 +86,8 @@ Feature: Example tokens everywhere
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context
+                (step_param)))
             (step_arg
               (data_table
                 (table_row
@@ -167,7 +171,8 @@ Feature: test
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context
+                (step_param)))
             (step_arg
               (data_table
                 (table_row
@@ -245,7 +250,8 @@ Feature:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line
@@ -268,7 +274,8 @@ Feature:
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (tags
             (tag))
@@ -321,7 +328,8 @@ Feature: Tagged Examples
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (tags
             (tag))

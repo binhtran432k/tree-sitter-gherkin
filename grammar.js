@@ -102,21 +102,29 @@ export default grammar({
     steps: ($) => repeat1(choice($.given_group, $.when_group, $.then_group)),
     step_arg: ($) => choice($.data_table, $.doc_string),
     _alt_steps: ($) => choice($.and_step, $.but_step, $.asterisk_step),
+    step_context: ($) => repeat1(choice(/[^<\s]+/, $.step_param)),
+    step_param: () => /<[^>\r\n]+>/,
+    // Given
     given_group: ($) => seq($.given_step, repeat($._alt_steps)),
     given_step: ($) => seq($.given_line, optional($.step_arg)),
-    given_line: ($) => seq($.given_kw, optional($.context), $._eol),
+    given_line: ($) => seq($.given_kw, optional($.step_context), $._eol),
+    // When
     when_group: ($) => seq($.when_step, repeat($._alt_steps)),
     when_step: ($) => seq($.when_line, optional($.step_arg)),
-    when_line: ($) => seq($.when_kw, optional($.context), $._eol),
+    when_line: ($) => seq($.when_kw, optional($.step_context), $._eol),
+    // Then
     then_group: ($) => seq($.then_step, repeat($._alt_steps)),
     then_step: ($) => seq($.then_line, optional($.step_arg)),
-    then_line: ($) => seq($.then_kw, optional($.context), $._eol),
+    then_line: ($) => seq($.then_kw, optional($.step_context), $._eol),
+    // And
     and_step: ($) => seq($.and_line, optional($.step_arg)),
-    and_line: ($) => seq($.and_kw, optional($.context), $._eol),
+    and_line: ($) => seq($.and_kw, optional($.step_context), $._eol),
+    // But
     but_step: ($) => seq($.but_line, optional($.step_arg)),
-    but_line: ($) => seq($.but_kw, optional($.context), $._eol),
+    but_line: ($) => seq($.but_kw, optional($.step_context), $._eol),
+    // Asterisk
     asterisk_step: ($) => seq($.asterisk_line, optional($.step_arg)),
-    asterisk_line: ($) => seq("* ", optional($.context), $._eol),
+    asterisk_line: ($) => seq("* ", optional($.step_context), $._eol),
     // Description
     description_helper: ($) => seq($.description, repeat($.comment)),
     description: ($) => repeat1($._other),

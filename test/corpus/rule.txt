@@ -35,7 +35,7 @@ Feature: Some rules
         (given_step
           (given_line
             (given_kw)
-            (context)))))
+            (step_context)))))
     (rule
       (rule_header
         (rule_line
@@ -50,7 +50,7 @@ Feature: Some rules
           (given_step
             (given_line
               (given_kw)
-              (context)))))
+              (step_context)))))
       (scenario_definition
         (scenario
           (scenario_line
@@ -60,7 +60,7 @@ Feature: Some rules
             (given_step
               (given_line
                 (given_kw)
-                (context)))))))
+                (step_context)))))))
     (rule
       (rule_header
         (rule_line
@@ -77,7 +77,7 @@ Feature: Some rules
             (given_step
               (given_line
                 (given_kw)
-                (context)))))))))
+                (step_context)))))))))
 
 ===
 Rule With Tag
@@ -137,7 +137,7 @@ Feature: Some tagged rules
             (given_step
               (given_line
                 (given_kw)
-                (context)))))))
+                (step_context)))))))
     (rule
       (rule_header
         (tags
@@ -156,7 +156,7 @@ Feature: Some tagged rules
             (given_step
               (given_line
                 (given_kw)
-                (context))))))
+                (step_context))))))
       (scenario_definition
         (tags
           (tag))
@@ -168,7 +168,7 @@ Feature: Some tagged rules
             (given_step
               (given_line
                 (given_kw)
-                (context))))))
+                (step_context))))))
       (scenario_definition
         (tags
           (tag))
@@ -180,7 +180,7 @@ Feature: Some tagged rules
             (given_step
               (given_line
                 (given_kw)
-                (context))))
+                (step_context))))
           (examples_definition
             (tags
               (tag))
@@ -223,4 +223,4 @@ Feature:
             (given_step
               (given_line
                 (given_kw)
-                (context)))))))))
+                (step_context)))))))))
