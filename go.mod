@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-gherkin
+module github.com/binhtran432k/tree-sitter-gherkin.git
 
 go 1.22
 

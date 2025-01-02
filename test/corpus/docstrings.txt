@@ -1,0 +1,122 @@
+===
+Docstrings
+===
+Feature: DocString variations
+
+  Scenario: minimalistic
+    Given a simple DocString
+      """
+      first line (no indent)
+        second line (indented with two spaces)
+
+      third line was empty
+      """
+    Given a DocString with content type
+      """xml
+      <foo>
+        <bar />
+      </foo>
+      """
+    And a DocString with wrong indentation
+      """
+    wrongly indented line
+      """
+    And a DocString with alternative separator
+      ```
+      first line
+      second line
+      ```
+    And a DocString with normal separator inside
+      ```
+      first line
+      """
+      third line
+      ```
+    And a DocString with alternative separator inside
+      """
+      first line
+      ```
+      third line
+      """
+    And a DocString with escaped separator inside
+      """
+      first line
+      \"\"\"
+      third line
+      """
+    And a DocString with an escaped alternative separator inside
+      ```
+      first line
+      \`\`\`
+      third line
+      ```
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (given_line
+            (given_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (media_type)
+              (doc_string_content))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))
+        (step
+          (and_line
+            (and_kw)
+            (context))
+          (step_arg
+            (doc_string
+              (doc_string_content))))))))

@@ -1,0 +1,213 @@
+===
+Background
+===
+Feature: Background
+
+  Background: a simple background
+    Given the minimalism inside a background
+
+
+  Scenario: minimalistic
+    Given the minimalism
+
+  Scenario: also minimalistic
+    Given the minimalism
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (background
+      (background_line
+        (background_kw)
+        (context))
+      (step
+        (given_line
+          (given_kw)
+          (context))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))))
+
+===
+Complex Background
+===
+Feature: Complex background
+  We want to ensure PickleStep all have different IDs
+
+  Background: a simple background
+    Given the minimalism inside a background
+
+  Scenario: minimalistic
+    Given the minimalism
+
+  Scenario: also minimalistic
+    Given the minimalism
+
+  Rule: My Rule
+
+    Background:
+      Given a rule background step
+
+    Scenario: with examples
+      Given the <value> minimalism
+
+      Examples:
+      | value |
+      | 1     |
+      | 2     |
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context))
+      (description_helper
+        (description)))
+    (background
+      (background_line
+        (background_kw)
+        (context))
+      (step
+        (given_line
+          (given_kw)
+          (context))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (given_line
+            (given_kw)
+            (context)))))
+    (rule
+      (rule_header
+        (rule_line
+          (rule_kw)
+          (context)))
+      (background
+        (background_line
+          (background_kw))
+        (step
+          (given_line
+            (given_kw)
+            (context))))
+      (scenario_definition
+        (scenario
+          (scenario_line
+            (scenario_kw)
+            (context))
+          (step
+            (given_line
+              (given_kw)
+              (context)))
+          (examples_definition
+            (examples
+              (examples_line
+                (examples_kw))
+              (examples_table
+                (table_head_row
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell)))
+                (table_row
+                  (table_col
+                    (table_cell)))))))))))
+
+===
+Incomplete Background 1
+===
+Feature: Incomplete backgrounds, Part 1
+
+  Background: no steps
+
+  Scenario: still pickles up
+    * a step
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (background
+      (background_line
+        (background_kw)
+        (context)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (asterisk_line
+            (context)))))))
+
+===
+Incomplete Background 2
+===
+Feature: Incomplete backgrounds, Part 2
+
+  Background: just a description
+    A short description
+
+  Scenario: still pickles up
+    * a step
+
+---
+
+(document
+  (feature
+    (feature_header
+      (feature_line
+        (feature_kw)
+        (context)))
+    (background
+      (background_line
+        (background_kw)
+        (context))
+      (description_helper
+        (description)))
+    (scenario_definition
+      (scenario
+        (scenario_line
+          (scenario_kw)
+          (context))
+        (step
+          (asterisk_line
+            (context)))))))

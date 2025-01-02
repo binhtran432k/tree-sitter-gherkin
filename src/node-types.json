@@ -1,5 +1,39 @@
 [
   {
+    "type": "and_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "and_kw",
+          "named": true
+        },
+        {
+          "type": "context",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "asterisk_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "context",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "background",
     "named": true,
     "fields": {},
@@ -9,10 +43,6 @@
       "types": [
         {
           "type": "background_line",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -35,15 +65,39 @@
       "required": true,
       "types": [
         {
-          "type": "background_keyword",
+          "type": "background_kw",
           "named": true
         },
         {
-          "type": "inline_text",
+          "type": "context",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "but_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "but_kw",
+          "named": true
+        },
+        {
+          "type": "context",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "context",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "data_table",
@@ -54,15 +108,7 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "table_body",
-          "named": true
-        },
-        {
-          "type": "table_header",
+          "type": "table_row",
           "named": true
         }
       ]
@@ -71,17 +117,7 @@
   {
     "type": "description",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "other",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "description_helper",
@@ -111,15 +147,20 @@
       "required": false,
       "types": [
         {
-          "type": "media_type",
+          "type": "doc_string_content",
           "named": true
         },
         {
-          "type": "other",
+          "type": "media_type",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "doc_string_content",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "document",
@@ -127,13 +168,9 @@
     "root": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
         {
           "type": "feature",
           "named": true
@@ -149,10 +186,6 @@
       "multiple": true,
       "required": true,
       "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
         {
           "type": "description_helper",
           "named": true
@@ -196,11 +229,11 @@
       "required": true,
       "types": [
         {
-          "type": "examples_keyword",
+          "type": "context",
           "named": true
         },
         {
-          "type": "inline_text",
+          "type": "examples_kw",
           "named": true
         }
       ]
@@ -215,15 +248,11 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
+          "type": "table_head_row",
           "named": true
         },
         {
-          "type": "table_body",
-          "named": true
-        },
-        {
-          "type": "table_header",
+          "type": "table_row",
           "named": true
         }
       ]
@@ -265,10 +294,6 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "description_helper",
           "named": true
         },
@@ -277,7 +302,7 @@
           "named": true
         },
         {
-          "type": "language_bang_line",
+          "type": "language",
           "named": true
         },
         {
@@ -296,18 +321,18 @@
       "required": true,
       "types": [
         {
-          "type": "feature_keyword",
+          "type": "context",
           "named": true
         },
         {
-          "type": "inline_text",
+          "type": "feature_kw",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "language_bang_line",
+    "type": "given_line",
     "named": true,
     "fields": {},
     "children": {
@@ -315,15 +340,35 @@
       "required": true,
       "types": [
         {
-          "type": "language_keyword",
+          "type": "context",
+          "named": true
+        },
+        {
+          "type": "given_kw",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "invalid_language_name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "language",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "invalid_language_name",
           "named": true
         },
         {
           "type": "language_name",
-          "named": true
-        },
-        {
-          "type": "unknown_language_name",
           "named": true
         }
       ]
@@ -361,10 +406,6 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "description_helper",
           "named": true
         },
@@ -388,11 +429,11 @@
       "required": true,
       "types": [
         {
-          "type": "inline_text",
+          "type": "context",
           "named": true
         },
         {
-          "type": "rule_keyword",
+          "type": "rule_kw",
           "named": true
         }
       ]
@@ -407,10 +448,6 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
           "type": "description_helper",
           "named": true
         },
@@ -420,6 +457,10 @@
         },
         {
           "type": "scenario_line",
+          "named": true
+        },
+        {
+          "type": "scenario_outline_line",
           "named": true
         },
         {
@@ -457,15 +498,30 @@
       "required": true,
       "types": [
         {
-          "type": "inline_text",
+          "type": "context",
           "named": true
         },
         {
-          "type": "scenario_keyword",
+          "type": "scenario_kw",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "scenario_outline_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "context",
           "named": true
         },
         {
-          "type": "scenario_outline_keyword",
+          "type": "scenario_outline_kw",
           "named": true
         }
       ]
@@ -480,32 +536,44 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
+          "type": "and_line",
           "named": true
         },
         {
-          "type": "step_args",
+          "type": "asterisk_line",
           "named": true
         },
         {
-          "type": "step_line",
+          "type": "but_line",
+          "named": true
+        },
+        {
+          "type": "given_line",
+          "named": true
+        },
+        {
+          "type": "step_arg",
+          "named": true
+        },
+        {
+          "type": "then_line",
+          "named": true
+        },
+        {
+          "type": "when_line",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "step_args",
+    "type": "step_arg",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
         {
           "type": "data_table",
           "named": true
@@ -518,46 +586,27 @@
     }
   },
   {
-    "type": "step_line",
+    "type": "table_cell",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "table_col",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": true,
+      "multiple": false,
+      "required": false,
       "types": [
         {
-          "type": "and_keyword",
-          "named": true
-        },
-        {
-          "type": "asterisk_keyword",
-          "named": true
-        },
-        {
-          "type": "but_keyword",
-          "named": true
-        },
-        {
-          "type": "given_keyword",
-          "named": true
-        },
-        {
-          "type": "inline_text",
-          "named": true
-        },
-        {
-          "type": "then_keyword",
-          "named": true
-        },
-        {
-          "type": "when_keyword",
+          "type": "table_cell",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "table_body",
+    "type": "table_head_row",
     "named": true,
     "fields": {},
     "children": {
@@ -565,14 +614,18 @@
       "required": false,
       "types": [
         {
-          "type": "cell_data",
+          "type": "table_col",
+          "named": true
+        },
+        {
+          "type": "table_trailing",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "table_header",
+    "type": "table_row",
     "named": true,
     "fields": {},
     "children": {
@@ -580,14 +633,23 @@
       "required": false,
       "types": [
         {
-          "type": "cell_data",
+          "type": "table_col",
+          "named": true
+        },
+        {
+          "type": "table_trailing",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "tag_line",
+    "type": "table_trailing",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "tags",
     "named": true,
     "fields": {},
     "children": {
@@ -602,7 +664,7 @@
     }
   },
   {
-    "type": "tags",
+    "type": "then_line",
     "named": true,
     "fields": {},
     "children": {
@@ -610,11 +672,30 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
+          "type": "context",
           "named": true
         },
         {
-          "type": "tag_line",
+          "type": "then_kw",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "when_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "context",
+          "named": true
+        },
+        {
+          "type": "when_kw",
           "named": true
         }
       ]
@@ -625,7 +706,7 @@
     "named": false
   },
   {
-    "type": "#",
+    "type": "* ",
     "named": false
   },
   {
@@ -637,23 +718,15 @@
     "named": false
   },
   {
-    "type": "and_keyword",
+    "type": "and_kw",
     "named": true
   },
   {
-    "type": "asterisk_keyword",
+    "type": "background_kw",
     "named": true
   },
   {
-    "type": "background_keyword",
-    "named": true
-  },
-  {
-    "type": "but_keyword",
-    "named": true
-  },
-  {
-    "type": "cell_data",
+    "type": "but_kw",
     "named": true
   },
   {
@@ -661,24 +734,20 @@
     "named": true
   },
   {
-    "type": "examples_keyword",
+    "type": "examples_kw",
     "named": true
   },
   {
-    "type": "feature_keyword",
+    "type": "feature_kw",
     "named": true
   },
   {
-    "type": "given_keyword",
+    "type": "given_kw",
     "named": true
   },
   {
-    "type": "inline_text",
-    "named": true
-  },
-  {
-    "type": "language_keyword",
-    "named": true
+    "type": "language",
+    "named": false
   },
   {
     "type": "language_name",
@@ -689,19 +758,15 @@
     "named": true
   },
   {
-    "type": "other",
+    "type": "rule_kw",
     "named": true
   },
   {
-    "type": "rule_keyword",
+    "type": "scenario_kw",
     "named": true
   },
   {
-    "type": "scenario_keyword",
-    "named": true
-  },
-  {
-    "type": "scenario_outline_keyword",
+    "type": "scenario_outline_kw",
     "named": true
   },
   {
@@ -709,15 +774,11 @@
     "named": true
   },
   {
-    "type": "then_keyword",
+    "type": "then_kw",
     "named": true
   },
   {
-    "type": "unknown_language_name",
-    "named": true
-  },
-  {
-    "type": "when_keyword",
+    "type": "when_kw",
     "named": true
   },
   {
