@@ -67,7 +67,7 @@ Scenario: joined tags
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (tags
         (tag)
@@ -81,7 +81,8 @@ Scenario: joined tags
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (tags
             (tag)
@@ -124,7 +125,7 @@ Scenario: joined tags
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (tags
         (tag))
@@ -137,7 +138,7 @@ Scenario: joined tags
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (rule
       (rule_header
         (tags
@@ -156,4 +157,4 @@ Scenario: joined tags
             (given_step
               (given_line
                 (given_kw)
-                (context)))))))))
+                (step_context)))))))))

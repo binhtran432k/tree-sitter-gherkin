@@ -598,6 +598,26 @@
         }
       ]
     },
+    "step_context": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "PATTERN",
+            "value": "[^<\\s]+"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "step_param"
+          }
+        ]
+      }
+    },
+    "step_param": {
+      "type": "PATTERN",
+      "value": "<[^>\\r\\n]+>"
+    },
     "given_group": {
       "type": "SEQ",
       "members": [
@@ -647,7 +667,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_context"
             },
             {
               "type": "BLANK"
@@ -709,7 +729,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_context"
             },
             {
               "type": "BLANK"
@@ -771,7 +791,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_context"
             },
             {
               "type": "BLANK"
@@ -817,7 +837,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_context"
             },
             {
               "type": "BLANK"
@@ -863,7 +883,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_context"
             },
             {
               "type": "BLANK"
@@ -909,7 +929,7 @@
           "members": [
             {
               "type": "SYMBOL",
-              "name": "context"
+              "name": "step_context"
             },
             {
               "type": "BLANK"

@@ -12,7 +12,7 @@
           "named": true
         },
         {
-          "type": "context",
+          "type": "step_context",
           "named": true
         }
       ]
@@ -46,7 +46,7 @@
       "required": false,
       "types": [
         {
-          "type": "context",
+          "type": "step_context",
           "named": true
         }
       ]
@@ -146,7 +146,7 @@
           "named": true
         },
         {
-          "type": "context",
+          "type": "step_context",
           "named": true
         }
       ]
@@ -444,11 +444,11 @@
       "required": true,
       "types": [
         {
-          "type": "context",
+          "type": "given_kw",
           "named": true
         },
         {
-          "type": "given_kw",
+          "type": "step_context",
           "named": true
         }
       ]
@@ -690,6 +690,21 @@
     }
   },
   {
+    "type": "step_context",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "step_param",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "table_cell",
     "named": true,
     "fields": {}
@@ -803,7 +818,7 @@
       "required": true,
       "types": [
         {
-          "type": "context",
+          "type": "step_context",
           "named": true
         },
         {
@@ -868,7 +883,7 @@
       "required": true,
       "types": [
         {
-          "type": "context",
+          "type": "step_context",
           "named": true
         },
         {
@@ -963,6 +978,10 @@
   },
   {
     "type": "scenario_outline_kw",
+    "named": true
+  },
+  {
+    "type": "step_param",
     "named": true
   },
   {

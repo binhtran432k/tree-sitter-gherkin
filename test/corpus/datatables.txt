@@ -37,7 +37,7 @@ Feature: DataTables
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -53,7 +53,7 @@ Feature: DataTables
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -62,7 +62,7 @@ Feature: DataTables
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -75,7 +75,7 @@ Feature: DataTables
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -87,7 +87,7 @@ Feature: DataTables
           (and_step
             (and_line
               (and_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -135,7 +135,7 @@ Feature: DataTables
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -145,7 +145,7 @@ Feature: DataTables
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -186,7 +186,7 @@ Feature: Escaped pipes
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -203,7 +203,7 @@ Feature: Escaped pipes
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -252,7 +252,7 @@ Feature: Extra table content
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -303,7 +303,7 @@ Feature: Inconsistent cell counts
           (given_step
             (given_line
               (given_kw)
-              (context))
+              (step_context))
             (step_arg
               (data_table
                 (table_row
@@ -323,7 +323,8 @@ Feature: Inconsistent cell counts
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context
+                (step_param)))))
         (examples_definition
           (examples
             (examples_line

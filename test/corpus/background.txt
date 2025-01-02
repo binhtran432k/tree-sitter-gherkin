@@ -28,7 +28,7 @@ Feature: Background
         (given_step
           (given_line
             (given_kw)
-            (context)))))
+            (step_context)))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -38,7 +38,7 @@ Feature: Background
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -48,7 +48,7 @@ Feature: Background
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 Complex Background
@@ -96,7 +96,7 @@ Feature: Complex background
         (given_step
           (given_line
             (given_kw)
-            (context)))))
+            (step_context)))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -106,7 +106,7 @@ Feature: Complex background
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -116,7 +116,7 @@ Feature: Complex background
           (given_step
             (given_line
               (given_kw)
-              (context))))))
+              (step_context))))))
     (rule
       (rule_header
         (rule_line
@@ -129,7 +129,7 @@ Feature: Complex background
           (given_step
             (given_line
               (given_kw)
-              (context)))))
+              (step_context)))))
       (scenario_definition
         (scenario
           (scenario_line
@@ -139,7 +139,8 @@ Feature: Complex background
             (given_step
               (given_line
                 (given_kw)
-                (context))))
+                (step_context
+                  (step_param)))))
           (examples_definition
             (examples
               (examples_line
@@ -184,7 +185,7 @@ Feature: Incomplete backgrounds, Part 1
           (context))
         (asterisk_step
           (asterisk_line
-            (context)))))))
+            (step_context)))))))
 
 ===
 Incomplete Background 2
@@ -218,4 +219,4 @@ Feature: Incomplete backgrounds, Part 2
           (context))
         (asterisk_step
           (asterisk_line
-            (context)))))))
+            (step_context)))))))

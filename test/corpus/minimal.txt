@@ -31,7 +31,7 @@ Feature: Minimal
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 Minimal
@@ -58,4 +58,4 @@ Feature: Minimal
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))

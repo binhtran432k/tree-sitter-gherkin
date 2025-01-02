@@ -26,7 +26,7 @@ I18n Emoji
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 I18n Fr
@@ -114,17 +114,17 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -134,17 +134,17 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -154,17 +154,17 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -174,17 +174,17 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -194,17 +194,17 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -214,21 +214,21 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context)))
+              (step_context)))
           (and_step
             (and_line
               (and_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -238,21 +238,21 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context)))
+              (step_context)))
           (and_step
             (and_line
               (and_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -262,21 +262,21 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context)))
+              (step_context)))
           (and_step
             (and_line
               (and_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -286,21 +286,21 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context)))
+              (step_context)))
           (but_step
             (but_line
               (but_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -310,21 +310,21 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context)))
+              (step_context)))
           (but_step
             (but_line
               (but_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))
+              (step_context))))))
     (scenario_definition
       (scenario
         (scenario_line
@@ -334,21 +334,21 @@ Fonctionnalité: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context)))
+              (step_context)))
           (but_step
             (but_line
               (but_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 I18n No
@@ -380,17 +380,17 @@ Egenskap: i18n support
           (given_step
             (given_line
               (given_kw)
-              (context))))
+              (step_context))))
         (when_group
           (when_step
             (when_line
               (when_kw)
-              (context))))
+              (step_context))))
         (then_group
           (then_step
             (then_line
               (then_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 Language
@@ -421,7 +421,7 @@ Feature: Explicit language specification
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))
 
 ===
 Spaces In Language
@@ -469,4 +469,4 @@ Feature: Minimal
           (given_step
             (given_line
               (given_kw)
-              (context))))))))
+              (step_context))))))))

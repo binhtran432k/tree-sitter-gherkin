@@ -55,6 +55,7 @@
         (but_kw) @type))
   ])
 
+(step_param) @variable.parameter
 
 (tag) @type
 

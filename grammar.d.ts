@@ -27,19 +27,27 @@ interface GherkinGrammarStruct {
   steps: Rule;
   _alt_steps: Rule;
   step_arg: Rule;
+  step_context: Rule;
+  step_param: Rule;
+  // Given
   given_group: Rule;
   given_step: Rule;
   given_line: Rule;
+  // When
   when_group: Rule;
   when_step: Rule;
   when_line: Rule;
+  // Then
   then_group: Rule;
   then_step: Rule;
   then_line: Rule;
+  // And
   and_step: Rule;
   and_line: Rule;
+  // But
   but_step: Rule;
   but_line: Rule;
+  // Asterisk
   asterisk_step: Rule;
   asterisk_line: Rule;
   // Description
