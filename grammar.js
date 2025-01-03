@@ -102,7 +102,7 @@ export default grammar({
     steps: ($) => repeat1(choice($.given_group, $.when_group, $.then_group)),
     step_arg: ($) => choice($.data_table, $.doc_string),
     _alt_steps: ($) => choice($.and_step, $.but_step, $.asterisk_step),
-    step_context: ($) => repeat1(choice(/[^<\s]+/, $.step_param)),
+    step_context: ($) => repeat1(choice(/(\\.|[^<\s])+/, $.step_param)),
     step_param: () => /<[^>\r\n]+>/,
     // Given
     given_group: ($) => seq($.given_step, repeat($._alt_steps)),
