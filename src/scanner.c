@@ -115,8 +115,6 @@ static bool scan(Scanner *scanner, TSLexer *lexer, const bool *valid_symbols) {
     while (is_nbsp(lexer))
       skip(lexer);
     if (is_eol(lexer)) {
-      if (!lexer->eof(lexer))
-        advance(lexer);
       lexer->result_symbol = _EOL;
       return true;
     }
